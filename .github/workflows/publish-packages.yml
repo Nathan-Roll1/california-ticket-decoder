@@ -1,0 +1,69 @@
+name: Publish reviewed CLE decoder assets
+on:
+  workflow_dispatch:
+    inputs:
+      registry:
+        description: Registry to publish
+        type: choice
+        required: true
+        options: [pypi, npm]
+      version:
+        description: Stable package version from the reviewed GitHub release
+        required: true
+      checksum_digest:
+        description: Verified SHA-256 of that release's SHA256SUMS.txt
+        required: true
+
+permissions: {}
+concurrency:
+  group: decoder-publish-${{ inputs.registry }}-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'Nathan-Roll1/california-ticket-decoder' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.registry }}
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      VERSION: ${{ inputs.version }}
+      REGISTRY: ${{ inputs.registry }}
+      CHECKSUM_DIGEST: ${{ inputs.checksum_digest }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Download the selected release's exact assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          [[ "$CHECKSUM_DIGEST" =~ ^[0-9a-f]{64}$ ]]
+          [[ "$(gh release view "v$VERSION" --repo "$GITHUB_REPOSITORY" --json isDraft,isPrerelease --jq '.isDraft or .isPrerelease')" == false ]]
+          mkdir -p reviewed/dist
+          gh release download "v$VERSION" --repo "$GITHUB_REPOSITORY" --pattern SHA256SUMS.txt --dir reviewed
+          if [[ "$REGISTRY" == npm ]]; then
+            gh release download "v$VERSION" --repo "$GITHUB_REPOSITORY" --pattern "california-ticket-decoder-$VERSION.tgz" --dir reviewed/dist
+          else
+            gh release download "v$VERSION" --repo "$GITHUB_REPOSITORY" --pattern "california_ticket_decoder-$VERSION-py3-none-any.whl" --pattern "california_ticket_decoder-$VERSION.tar.gz" --dir reviewed/dist
+          fi
+          python3 scripts/verify-package-assets.py "$REGISTRY" "$VERSION" "$CHECKSUM_DIGEST" reviewed
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        if: inputs.registry == 'npm'
+        with:
+          node-version: '24.22.3'
+          package-manager-cache: false
+      - name: Publish the npm tarball using OIDC
+        if: inputs.registry == 'npm'
+        run: |
+          set -euo pipefail
+          test "$(printf '%s\n' '11.5.1' "$(npm --version)" | sort -V | head -n 1)" = '11.5.1'
+          npm publish "./reviewed/dist/california-ticket-decoder-$VERSION.tgz" --access public --ignore-scripts --registry=https://registry.npmjs.org
+      - name: Publish the wheel and source distribution using OIDC
+        if: inputs.registry == 'pypi'
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 # release/v1
+        with:
+          packages-dir: reviewed/dist/
