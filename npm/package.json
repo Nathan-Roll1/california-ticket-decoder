@@ -1,0 +1,12 @@
+{
+  "name": "california-ticket-decoder",
+  "version": "0.1.0",
+  "description": "Offline lookup of 49 sourced California county ticket schedule references for 2026.",
+  "author": "California Licensing Education",
+  "license": "(MIT AND CC-BY-4.0)",
+  "homepage": "https://traffic.californialicensingeducation.com/tools/",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "bin": { "california-ticket-decoder": "./cli.mjs" },
+  "files": ["cli.mjs", "*.json", "README.md", "LICENSE", "DATA-LICENSE.txt"]
+}

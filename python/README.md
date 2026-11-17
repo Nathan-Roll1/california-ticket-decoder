@@ -1,0 +1,9 @@
+# California ticket decoder
+
+Look up a published 2026 schedule reference for an ordinary adult first-offense infraction. The 49 records cover six counties and five Vehicle Code subsections. Every lookup returns a single matching reference in integer USD cents with source pages, review date and assumptions. The court determines the case balance and traffic-school eligibility. Court administrative fees and school tuition are separate.
+
+Run `california-ticket-decoder list` for the exact county, subsection and speed-band combinations. For example, run `california-ticket-decoder get "Santa Barbara" "22450(a)"` or `california-ticket-decoder get "Siskiyou" "22349(a)" "1-15"`. Run `california-ticket-decoder scope` for the cases covered. Quotes protect spaces and parentheses in your shell. Results use JSON. Missing matches exit with status 1. Invalid command syntax exits with status 2.
+
+Install the local Python wheel with `python -m pip install --no-index ./california_ticket_decoder-0.1.0-py3-none-any.whl` or the Node package with `npm install --offline ./california-ticket-decoder-0.1.0.tgz` and run `npx --offline california-ticket-decoder list`. Each implementation operates offline after installation and has zero runtime dependencies.
+
+Code is MIT licensed. The bundled, unmodified dataset is version 2026-11-17.3 by California Licensing Education, licensed under CC BY 4.0. The original official sources retain their own terms. [Source snapshot](https://github.com/Nathan-Roll1/california-traffic-ticket-and-tvs-fees-2026/tree/829790eb8fc3331218b41a435b2b1ebf7e0d1a95), [public tools](https://traffic.californialicensingeducation.com/tools/), [cost guide](https://traffic.californialicensingeducation.com/traffic-school-cost/), [California Courts eligibility guide](https://selfhelp.courts.ca.gov/traffic/traffic-school).

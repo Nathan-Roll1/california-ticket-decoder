@@ -1,0 +1,5 @@
+body { width: 345px; margin: 0; color: #142521; font: 14px/1.45 system-ui, sans-serif; }
+main { padding: 16px; } h1 { font-size: 21px; margin: 0; }
+button, input { box-sizing: border-box; font: inherit; width: 100%; padding: 8px; } button { cursor: pointer; }
+label, summary { font-weight: 600; } a { color: #17478a; }
+details { padding: 8px 0; border-bottom: 1px solid #ccc; } summary { cursor: pointer; }

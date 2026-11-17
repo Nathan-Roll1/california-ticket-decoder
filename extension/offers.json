@@ -1,0 +1,143 @@
+{
+  "currency": "USD",
+  "schools": [
+    {
+      "id": "five-bucks",
+      "name": "$5 Bucks Traffic School",
+      "sourceUrl": "https://www.5buckstrafficschool.com/",
+      "additionalSourceUrl": null,
+      "priceMinor": 500,
+      "regularPriceMinor": null,
+      "promotion": null,
+      "included": "Electronic DMV/court filing and unlimited retakes are advertised as included.",
+      "paymentTiming": "Payment timing: unknown from its public offer.",
+      "standardReporting": "Advertises immediate electronic filing after passing, included in the fee.",
+      "optionalServices": [],
+      "optionalServicesNote": "Unknown; current optional-service prices were not verified.",
+      "courseLanguageVerified": null
+    },
+    {
+      "id": "five-dollar",
+      "name": "$5 Dollar Traffic School",
+      "sourceUrl": "https://www.5dollartrafficschool.com/California/Traffic-School-Course/home.php",
+      "additionalSourceUrl": null,
+      "priceMinor": 500,
+      "regularPriceMinor": null,
+      "promotion": null,
+      "included": "Electronic DMV/court filing is advertised as included.",
+      "paymentTiming": "Payment timing: unknown from its public offer.",
+      "standardReporting": "Advertises free instant electronic filing. Actual turnaround was not tested.",
+      "optionalServices": [],
+      "optionalServicesNote": "Unknown; current optional-service prices were not verified.",
+      "courseLanguageVerified": null
+    },
+    {
+      "id": "best-online",
+      "name": "Best Online Traffic School",
+      "sourceUrl": "https://www.bestonlinetrafficschool.co/traffic-school-cost/",
+      "additionalSourceUrl": null,
+      "priceMinor": 2799,
+      "regularPriceMinor": null,
+      "promotion": null,
+      "included": "Course, unlimited retakes, electronic certificate and submission are advertised as included.",
+      "paymentTiming": "Pay after passing the final exam.",
+      "standardReporting": "Advertises same-day submission included in the fee. Daily cutoff: unknown.",
+      "optionalServices": [
+        {
+          "name": "Status-update service",
+          "priceMinor": 1699,
+          "maximumPriceMinor": 2999,
+          "condition": null
+        },
+        {
+          "name": "Printed certificate",
+          "priceMinor": 1199,
+          "maximumPriceMinor": null,
+          "condition": null
+        }
+      ],
+      "optionalServicesNote": "The printed certificate is described as optional, not required by the court.",
+      "courseLanguageVerified": null
+    },
+    {
+      "id": "cle",
+      "name": "California Licensing Education",
+      "sourceUrl": "https://traffic.californialicensingeducation.com/conditions/",
+      "additionalSourceUrl": null,
+      "priceMinor": 299,
+      "regularPriceMinor": null,
+      "promotion": null,
+      "included": "Final exam, completion receipt and standard reporting are included.",
+      "paymentTiming": "Free lessons; pay before the final exam.",
+      "standardReporting": "Standard DMV reporting within three business days after completion and exam passage, once course requirements are met.",
+      "optionalServices": [],
+      "optionalServicesNote": "No rush option listed in our public offer.",
+      "courseLanguageVerified": "English only"
+    },
+    {
+      "id": "improv",
+      "name": "IMPROV",
+      "sourceUrl": "https://www.myimprov.com/traffic-school-online/california/",
+      "additionalSourceUrl": null,
+      "priceMinor": 2495,
+      "regularPriceMinor": 3695,
+      "promotion": "Displayed promotion applies to the California Traffic School base price only; availability may change.",
+      "included": "Course, completion certificate and DMV/court reporting are advertised as included.",
+      "paymentTiming": "The public page describes payment before starting the course.",
+      "standardReporting": "Electronic reporting is advertised as included. Actual turnaround was not tested.",
+      "optionalServices": [],
+      "optionalServicesNote": "Unknown; current optional-service prices were not verified.",
+      "courseLanguageVerified": null
+    },
+    {
+      "id": "safe2drive",
+      "name": "Safe2Drive",
+      "sourceUrl": "https://www.safe2drive.com/ca-courses.aspx",
+      "additionalSourceUrl": "https://www.safe2drive.com/california-traffic-school.aspx",
+      "priceMinor": 2495,
+      "regularPriceMinor": null,
+      "promotion": null,
+      "included": "Electronic completion processing and a receipt are advertised as included.",
+      "paymentTiming": "Registration requires no upfront payment. Exact payment-due stage: not verified.",
+      "standardReporting": "Electronic processing is advertised as included. Submission timing: not verified.",
+      "optionalServices": [],
+      "optionalServicesNote": "Unknown; current optional-service prices were not verified.",
+      "courseLanguageVerified": null
+    },
+    {
+      "id": "busy-people",
+      "name": "Traffic School 4 Busy People",
+      "sourceUrl": "https://www.trafficschool4busypeople.com/our-price",
+      "additionalSourceUrl": "https://www.trafficschool4busypeople.com/express-processing",
+      "priceMinor": 1995,
+      "regularPriceMinor": null,
+      "promotion": null,
+      "included": "Course, final exam, completion email and standard submission are advertised as included.",
+      "paymentTiming": "Pay after passing the final exam.",
+      "standardReporting": "Within three business days after passing, providing ticket details and paying.",
+      "optionalServices": [
+        {
+          "name": "Express same-business-day submission",
+          "priceMinor": 895,
+          "maximumPriceMinor": null,
+          "condition": "Pass and pay by 5 p.m. Pacific, Monday\u2013Friday. Confirm holiday cutoffs."
+        },
+        {
+          "name": "Certificate-sent notification",
+          "priceMinor": 395,
+          "maximumPriceMinor": null,
+          "condition": null
+        },
+        {
+          "name": "Court-review notification",
+          "priceMinor": 595,
+          "maximumPriceMinor": null,
+          "condition": null
+        }
+      ],
+      "optionalServicesNote": "These services are optional; standard submission is included.",
+      "courseLanguageVerified": null
+    }
+  ],
+  "checkedDate": "2026-11-16"
+}

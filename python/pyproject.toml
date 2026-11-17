@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "california-ticket-decoder"
+version = "0.1.0"
+description = "Offline lookup of 49 sourced California county ticket schedule references for 2026."
+requires-python = ">=3.9"
+authors = [{name = "California Licensing Education"}]
+readme = "README.md"
+license = "MIT AND CC-BY-4.0"
+license-files = ["LICENSE", "DATA-LICENSE.txt"]
+
+[project.scripts]
+california-ticket-decoder = "california_ticket_decoder:main"
+
+[project.urls]
+Homepage = "https://traffic.californialicensingeducation.com/tools/"
+"School cost guide" = "https://traffic.californialicensingeducation.com/traffic-school-cost/"
+Dataset = "https://github.com/Nathan-Roll1/california-traffic-ticket-and-tvs-fees-2026"
+
+[tool.setuptools.package-data]
+california_ticket_decoder = ["*.json"]
