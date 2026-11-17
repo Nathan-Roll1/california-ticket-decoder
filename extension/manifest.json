@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "California Traffic School Fee Notes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "View seven dated school price observations alongside California traffic school directories.",
   "action": {
     "default_popup": "popup.html",

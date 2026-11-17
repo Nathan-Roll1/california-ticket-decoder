@@ -2,9 +2,13 @@
 
 Look up 49 source-linked 2026 California ticket schedule examples offline in Python or Node. Each result gives the county, Vehicle Code, scenario, amount in cents, source and page. Coverage varies by offense. For example, the only reviewed stop-sign row is Santa Barbara. Your court determines the balance, eligibility and deadline for your case.
 
+## Use it in a browser
+
+[Filter the schedule references](https://huggingface.co/spaces/NathanRoll/california-traffic-ticket-decoder) or [run the audit in Google Colab](https://colab.research.google.com/github/Nathan-Roll1/california-ticket-decoder/blob/main/notebooks/ticket-schedule-audit.ipynb). The notebook verifies the released Python wheel, shows the source pages for a selected ticket and reconciles all 49 rows in integer cents. The [Observable notebook source](notebooks/county-fees.html) compares base fines, state penalties and separately sourced court traffic-school fees for the same speeding example.
+
 ## Install from a release
 
-Download a build and the SHA256SUMS.txt file from the [releases page](https://github.com/Nathan-Roll1/california-ticket-decoder/releases). Verify the digest of the downloaded file before installation.
+Download a build and the SHA256SUMS.txt file from the [v0.1.0 decoder release](https://github.com/Nathan-Roll1/california-ticket-decoder/releases/tag/v0.1.0). Verify the digest of the downloaded file before installation.
 
 In a Python virtual environment:
 
@@ -19,6 +23,12 @@ With Node 18 or newer, in a local project:
 ## Directory price notes
 
 The separate Chrome extension shows seven dated school offers and identifies promotional prices and optional services. CLE sells one of the compared courses. Open the popup beside a directory PDF, or apply the notes to supported HTML pages. It uses temporary active-tab access and runs on demand. See the [installation and privacy notes](extension/README.txt).
+
+## Compare an advertised fee with a DMV result
+
+![On the California DMV traffic school directory, the School fee notes extension adds California Licensing Education’s dated $2.99 advertised school fee beside its E1008 result.](media/fee-notes-demo.gif)
+
+The California DMV directory supplies the license record. California Licensing Education supplies the local fee note and sells the course shown. The observed school fee was checked November 16, 2026. Court fees and fines are separate. [Official DMV directory](https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licensing/occupational-license-lookup/traffic-school-list/) · [Offer sources](https://traffic.californialicensingeducation.com/how-to-choose-traffic-school/#provider-offers)
 
 ## Sources and license
 

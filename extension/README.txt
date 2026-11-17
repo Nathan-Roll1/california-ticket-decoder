@@ -1,4 +1,4 @@
-California Traffic School Fee Notes v0.1.0 • Published by California Licensing Education.
+California Traffic School Fee Notes v0.1.1 • Published by California Licensing Education.
 Extract the ZIP, open chrome://extensions, enable Developer mode and choose Load unpacked. Select the extracted directory containing manifest.json. Click the extension icon for the seven-offer comparison. On an eligible HTML directory, click Add notes beside matching schools. Use the name search for PDF directories, framed results, unknown names or pages Chrome restricts. Search the observed name exactly before acting on a price.
 
 The two Chrome capabilities are activeTab and scripting. The extension reads visible HTML school names only after the user clicks the annotation button on an allowed URL. It has no persistent host permissions, analytics, user accounts, remote code, storage or transmission of browsing data. All observations and assets are bundled. Provider and California DOJ links open only on user activation. No affiliation with DMV, the courts or directory operators is implied.

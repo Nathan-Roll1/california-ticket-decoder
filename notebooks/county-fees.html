@@ -1,0 +1,24 @@
+<!doctype html>
+<notebook theme="air">
+<title>Comparing California traffic-ticket schedule components</title>
+<script id="1" type="text/markdown">
+# Comparing California traffic-ticket schedule components
+Compare the same example across six counties: a first-offense Vehicle Code 22349(a) citation in the 1–15 mph band. The base fine and state penalty are two components of the scheduled amount. The court traffic-school fee is a separate charge if applicable. The court determines eligibility and the amount due.
+</script>
+<script id="2" type="module">
+const records = [{"county": "Siskiyou", "base": 35.0, "state": 40.0, "fee": null, "source": "https://www.siskiyou.courts.ca.gov/system/files/general/ubps-2026-final_0.pdf", "page": 27, "feeSource": null, "feeDate": null}, {"county": "Glenn", "base": 35.0, "state": 40.0, "fee": null, "source": "https://www.glenn.courts.ca.gov/system/files/forms-and-filings/ubps-2026-final.pdf", "page": 31, "feeSource": null, "feeDate": null}, {"county": "Los Angeles", "base": 35.0, "state": 40.0, "fee": 64.0, "source": "https://lascpubstorage.blob.core.windows.net/cpw/LIBOPSTraffic-5-BailScheduleForInfractionsAndMisdemeanors.pdf", "page": 11, "feeSource": "https://www.lacourt.org/division/traffic/TR0042.aspx", "feeDate": "2026-11-17"}, {"county": "San Diego", "base": 35.0, "state": 40.0, "fee": 52.0, "source": "https://sdcourt.ca.gov/sites/default/files/sdcourt/criminal2/criminalresources/bail_schedule.pdf", "page": 53, "feeSource": "https://www.sdcourt.ca.gov/sdcourt/traffic3/trafficfaq", "feeDate": "2026-11-17"}, {"county": "Orange", "base": 35.0, "state": 40.0, "fee": null, "source": "https://www.occourts.org/system/files/criminal/uniform-bail-and-penalty-schedule-orange-county-edition.pdf", "page": 27, "feeSource": null, "feeDate": "2026-11-02"}, {"county": "Santa Barbara", "base": 35.0, "state": 40.0, "fee": 66.0, "source": "https://www.santabarbara.courts.ca.gov/system/files/general/uniform-bail-and-penalty-schedule-effective-january-1-2026.pdf", "page": 29, "feeSource": "https://www.santabarbara.courts.ca.gov/divisions/trafficminor-offenses", "feeDate": "2026-11-16"}];
+const metric = view(Inputs.select(["Base fine", "State penalty", "Court traffic-school fee"], {label:"Compare in USD"}));
+</script>
+<script id="3" type="module">
+const key = {"Base fine":"base","State penalty":"state","Court traffic-school fee":"fee"}[metric];
+const available = records.filter(r => r[key] != null);
+display(Plot.plot({height:250,marginLeft:110,x:{label:"US dollars",grid:true},y:{label:null},marks:[Plot.barX(available,{x:key,y:"county",fill:"#17645b",tip:true}),Plot.ruleX([0])]}));
+const unknown = records.filter(r => r[key] == null).map(r=>r.county);
+display(unknown.length ? "Amount unverified for " + unknown.join(", ") + "." : "All six counties have a reviewed value for this measure.");
+</script>
+<script id="4" type="module">
+display(Inputs.table(records,{columns:["county","base","state","fee","source","page","feeSource","feeDate"]}));
+</script>
+<script id="5" type="text/markdown">
+Curated by California Licensing Education. Data edition 2026-11-17.3, CC BY 4.0. [Download all records and source notes](https://github.com/Nathan-Roll1/california-traffic-ticket-and-tvs-fees-2026/tree/v2026-11-17.3) · [Filter all 49 references](https://huggingface.co/spaces/NathanRoll/california-traffic-ticket-decoder) · [Traffic school cost guide](https://traffic.californialicensingeducation.com/traffic-school-cost/).
+</script></notebook>

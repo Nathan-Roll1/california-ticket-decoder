@@ -26,7 +26,7 @@ export function annotate(offers, date, expectedUrl) {
       const badge = document.createElement("small");
       badge.dataset.cleFee = "1";
       badge.textContent = " · CLE comparison: advertised school fee " + new Intl.NumberFormat("en-US", {style:"currency", currency:"USD"}).format(offer.priceMinor/100) + " (" + date + "). Court charges separate.";
-      badge.style.cssText = "display:block;color:#253b37;background:#f0f4f1;padding:2px 4px;font:normal 12px/1.5 system-ui";
+      badge.style.cssText = "display:block;color:#253b37;background:#f0f4f1;padding:2px 4px;font:normal 12px/1.5 system-ui;white-space:normal;overflow-wrap:anywhere;max-inline-size:100%;box-sizing:border-box";
       if (element.matches("td,th,li,[role=cell],[role=gridcell]")) element.append(badge);
       else element.after(badge);
       element.dataset.cleMatched = "1";
