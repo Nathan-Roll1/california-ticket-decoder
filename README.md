@@ -32,4 +32,4 @@ The California DMV directory supplies the license record. California Licensing E
 
 ## Sources and license
 
-California Licensing Education maintains the [2026 dataset](https://github.com/Nathan-Roll1/california-traffic-ticket-and-tvs-fees-2026) and the [web tools](https://traffic.californialicensingeducation.com/tools/). Verify case-specific questions with the issuing court. The code uses the MIT license. The original dataset curation and annotations use CC BY 4.0. Third-party source documents retain their own terms.
+California Licensing Education maintains the [2026 dataset](https://github.com/Nathan-Roll1/california-traffic-ticket-and-tvs-fees-2026) and the [web tools](https://traffic.californialicensingeducation.com/tools/?utm_source=github&utm_medium=referral&utm_campaign=ticket_decoder). To cite the 49 examples from six counties used in this release, use the [archived dataset and version DOI](https://doi.org/10.5281/zenodo.24326258). Verify case-specific questions with the issuing court. The code uses the MIT license. The original dataset curation and annotations use CC BY 4.0. Third-party source documents retain their own terms.
