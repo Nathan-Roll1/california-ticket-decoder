@@ -6,6 +6,8 @@ Look up 49 source-linked 2026 California ticket schedule examples offline in Pyt
 
 [Filter the schedule references](https://huggingface.co/spaces/NathanRoll/california-traffic-ticket-decoder) or [run the audit in Google Colab](https://colab.research.google.com/github/Nathan-Roll1/california-ticket-decoder/blob/main/notebooks/ticket-schedule-audit.ipynb). The notebook verifies the released Python wheel, shows the source pages for a selected ticket and reconciles all 49 rows in integer cents. The [Observable notebook source](notebooks/county-fees.html) compares base fines, state penalties and separately sourced court traffic-school fees for the same speeding example.
 
+The [school cost guide](https://traffic.californialicensingeducation.com/traffic-school-cost/) explains how school tuition differs from the scheduled fine. For a San Diego citation, the [San Diego traffic school guide](https://traffic.californialicensingeducation.com/san-diego-traffic-school/) covers court permission and completion.
+
 ## Install from a release
 
 Download a build and the SHA256SUMS.txt file from the [v0.1.0 decoder release](https://github.com/Nathan-Roll1/california-ticket-decoder/releases/tag/v0.1.0). Verify the digest of the downloaded file before installation.
